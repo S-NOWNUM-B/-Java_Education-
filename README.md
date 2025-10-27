@@ -34,8 +34,8 @@
 ### Клонирование репозитория
 
 ```bash
-git clone <repository-url>
-cd Java_Education
+  git clone <repository-url>
+  cd Java_Education
 ```
 
 ---
