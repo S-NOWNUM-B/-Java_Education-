@@ -219,4 +219,10 @@ public class Invoice {
 
     public String getInternalNotes() { return internalNotes; }
     public void setInternalNotes(String internalNotes) { this.internalNotes = internalNotes; }
+
+    // --- ALIASES FOR COMPATIBILITY ---
+    public double getAmount() { return grossAmount; }
+    public void setAmount(double amount) { this.grossAmount = amount; }
+    public boolean isPaid() { return "PAID".equalsIgnoreCase(status); }
+    public void setPaid(boolean paid) { this.status = paid ? "PAID" : "SENT"; }
 }

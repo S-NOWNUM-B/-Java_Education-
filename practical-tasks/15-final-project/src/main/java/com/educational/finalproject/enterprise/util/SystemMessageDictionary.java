@@ -141,6 +141,59 @@ public final class SystemMessageDictionary {
         public static final String CORE_SRV_010 = "CORE_010: Системный мониторинг запущен.";
     }
 
+    /**
+     * Константы для модуля производства (Manufacturing).
+     */
+    public static final class Manufacturing {
+        public static final String ERR_MACHINE_BREAKDOWN = "Производство: Зафиксирована критическая поломка оборудования. Требуется немедленный выезд техники.";
+        public static final String ERR_MATERIAL_SHORTAGE = "Снабжение: Дефицит сырья для выполнения производственного заказа {0}. Запуск приостановлен.";
+        public static final String ERR_QC_FAILED = "Контроль качества: Партия изделий {0} не прошла проверку по параметру {1}. Требуется переработка.";
+        public static final String MSG_ORDER_STARTED = "Цех: Производственный заказ {0} успешно запущен на линии {1}.";
+        public static final String MSG_MAINTENANCE_LOGGED = "Сервис: Техническое обслуживание станка {0} завершено. Статус: Исправен.";
+        public static final String UI_CAPACITY_LIMIT = "Внимание: Загрузка рабочего центра {0} близка к 100%. Возможны задержки в планировании.";
+        public static final String LOG_RESOURCE_ALLOCATED = "Лог: Ресурсы для заказа {0} успешно выделены и зарезервированы.";
+        
+        public static final String ERR_BOM_NOT_APPROVED = "Документация: Спецификация (BOM) для изделия {0} еще не утверждена главным инженером.";
+        public static final String ERR_INVALID_WORK_CENTER = "Топология: Указанный рабочий центр не существует или находится на консервации.";
+        public static final String MSG_COMPONENTS_PICKED = "Склад: Все компоненты согласно спецификации {0} переданы на производство.";
+        
+        // Масштабное расширение для объема - Блок 1: Сообщения цехов
+        public static final String MF_MSG_W01 = "MF_W01: Температурный режим в цехе №1 стабилизирован.";
+        public static final String MF_MSG_W02 = "MF_W02: Смена персонала на линии сборки произведена.";
+        public static final String MF_MSG_W03 = "MF_W03: Инструментальный контроль завершен без замечаний.";
+        public static final String MF_MSG_W04 = "MF_W04: Освещенность рабочих мест соответствует нормам.";
+        public static final String MF_MSG_W05 = "MF_W05: Уровень шума в пределах допустимых значений.";
+        public static final String MF_MSG_W06 = "MF_W06: Проверка пожарной безопасности пройдена.";
+        public static final String MF_MSG_W07 = "MF_W07: Система вентиляции работает в штатном режиме.";
+        public static final String MF_MSG_W08 = "MF_W08: Подготовка оснастки к новому циклу завершена.";
+        public static final String MF_MSG_W09 = "MF_W09: Обучение новых сотрудников на рабочем месте проведено.";
+        public static final String MF_MSG_W10 = "MF_W10: Защитная экипировка роздана мастерам смен.";
+
+        // Блок 2: Технические показатели станков
+        public static final String MF_TECH_M01 = "MF_M01: Вибрация вала в пределах допуска.";
+        public static final String MF_TECH_M02 = "MF_M02: Давление в гидравлической системе 5.2 Бар.";
+        public static final String MF_TECH_M03 = "MF_M03: Уровень масла в картере двигателя в норме.";
+        public static final String MF_TECH_M04 = "MF_M04: Потребление энергии соответствует планируемому.";
+        public static final String MF_TECH_M05 = "MF_M05: Программное обеспечение ЧПУ обновлено до версии 4.5.";
+        public static final String MF_TECH_M06 = "MF_M06: Калибровка датчиков выполнена успешно.";
+        public static final String MF_TECH_M07 = "MF_M07: Время наработки на отказ составляет 450 часов.";
+        public static final String MF_TECH_M08 = "MF_M08: Температура подшипников 42 градуса Цельсия.";
+        public static final String MF_TECH_M09 = "MF_M09: Охлаждающая жидкость долита до максимального уровня.";
+        public static final String MF_TECH_M10 = "MF_M10: Щетки электродвигателя заменены.";
+
+        // Блок 3: Контроль качества (Quality Control)
+        public static final String QC_MSG_001 = "QC_001: Визуальный осмотр продукции завершен.";
+        public static final String QC_MSG_002 = "QC_002: Геометрические размеры в пределах допуска.";
+        public static final String QC_MSG_003 = "QC_003: Твердость материала соответствует ТЗ.";
+        public static final String QC_MSG_004 = "QC_004: Испытание на разрыв пройдено.";
+        public static final String QC_MSG_005 = "QC_005: Химический анализ пробы металла завершен.";
+        public static final String QC_MSG_006 = "QC_006: Сертификат качества для партии {0} распечатан.";
+        public static final String QC_MSG_007 = "QC_007: Отбор образцов для лаборатории выполнен.";
+        public static final String QC_MSG_008 = "QC_008: Упаковка проверена на целостность.";
+        public static final String QC_MSG_009 = "QC_009: Маркировка соответствия (ГОСТ) нанесена.";
+        public static final String QC_MSG_010 = "QC_010: Финальная приемка ОТК завершена.";
+    }
+
     public static final class UiLabels {
         public static final String BTN_SAVE = "Сохранить изменения";
         public static final String BTN_CANCEL = "Отмена";
@@ -159,5 +212,26 @@ public final class SystemMessageDictionary {
         public static final String LBL_IMPORT = "Импорт ресурсов";
         public static final String LBL_HELP = "Справка и поддержка";
         public static final String LBL_LOGOUT = "Выход из системы";
+        
+        // Дополнительные метки для Enterprise
+        public static final String LBL_ANALYTICS = "Аналитические показатели";
+        public static final String LBL_INVENTORY = "Складские запасы";
+        public static final String LBL_EMPLOYEES = "Реестр персонала";
+        public static final String LBL_RESOURCES = "Производственные ресурсы";
+        public static final String LBL_SCHEDULE = "График работ";
+        public static final String LBL_TASKS = "Мои задачи";
+        public static final String LBL_DOCUMENTS = "Документооборот";
+        public static final String LBL_MESSAGES = "Внутренняя переписка";
+        public static final String LBL_ALERTS = "Системные предупреждения";
+        public static final String LBL_HISTORY = "История изменений";
+        
+        public static final String LBL_STEP_1 = "Шаг 1: Конфигурация параметров";
+        public static final String LBL_STEP_2 = "Шаг 2: Проверка зависимостей";
+        public static final String LBL_STEP_3 = "Шаг 3: Финальное подтверждение";
+        public static final String LBL_WAITING = "Ожидание ответа сервера...";
+        public static final String LBL_PROCESSING = "Обработка данных, пожалуйста, подождите.";
+        public static final String LBL_COMPLETED = "Операция успешно завершена.";
+        public static final String LBL_FAILED = "Операция прервана из-за ошибки.";
+        public static final String LBL_RETRY = "Повторить попытку";
     }
 }

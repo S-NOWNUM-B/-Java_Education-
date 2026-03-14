@@ -114,4 +114,20 @@ public class CurrencyExchangeService {
             setRateSource("Mock Central Bank");
         }});
     }
+
+    /**
+     * <p>Обновляет курс валют (перегруженный метод для тестов).</p>
+     * @param from Валюта от
+     * @param to Валюта к
+     * @param rate Значение курса
+     */
+    @Transactional
+    public void updateRate(String from, String to, double rate) {
+        CurrencyExchangeDTO dto = new CurrencyExchangeDTO();
+        dto.setBaseCurrency(from);
+        dto.setTargetCurrency(to);
+        dto.setExchangeRate(rate);
+        dto.setRateSource("Test Update");
+        updateRate(dto);
+    }
 }

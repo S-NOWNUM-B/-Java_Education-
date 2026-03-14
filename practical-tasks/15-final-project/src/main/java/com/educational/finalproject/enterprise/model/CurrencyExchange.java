@@ -128,4 +128,8 @@ public class CurrencyExchange {
 
     public String getRemarks() { return remarks; }
     public void setRemarks(String remarks) { this.remarks = remarks; }
+
+    // --- COMPATIBILITY METHODS FOR TESTS ---
+    public void setFromCurrency(String from) { this.baseCurrency = from; }
+    public void setToCurrency(String to) { this.targetCurrency = to; }
 }

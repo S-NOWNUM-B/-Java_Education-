@@ -15,7 +15,7 @@ public class OpportunityDTO {
     private Long id;
     private String name;
     private double expectedRevenue;
-    private int probability;
+    private double probability;
     private String stage;
     private LocalDateTime closedDate;
     private LocalDateTime createdAt;
@@ -45,8 +45,8 @@ public class OpportunityDTO {
     public double getExpectedRevenue() { return expectedRevenue; }
     public void setExpectedRevenue(double expectedRevenue) { this.expectedRevenue = expectedRevenue; }
 
-    public int getProbability() { return probability; }
-    public void setProbability(int probability) { this.probability = probability; }
+    public double getProbability() { return probability; }
+    public void setProbability(double probability) { this.probability = probability; }
 
     public String getStage() { return stage; }
     public void setStage(String stage) { this.stage = stage; }

@@ -140,4 +140,32 @@ public class TaxService {
         report.setAuditorComments(comments);
         taxReportRepository.save(report);
     }
+
+    /**
+     * <p>Получает историю налоговых отчетов.</p>
+     * @return Список отчетов
+     */
+    @Transactional(readOnly = true)
+    public List<TaxReport> getTaxHistory() {
+        return taxReportRepository.findAll();
+    }
+
+    /**
+     * <p>Генерирует налоговый отчет (упрощенно для тестов).</p>
+     * @param income Доход
+     * @param region Регион
+     * @return TaxReport
+     */
+    @Transactional
+    public TaxReport generateReport(double income, String region) {
+        if (region == null || region.isEmpty()) {
+            throw new IllegalArgumentException("Region is required");
+        }
+        TaxReport report = new TaxReport("AUTO-" + System.currentTimeMillis(), "CURRENT");
+        report.setTotalIncome(income);
+        report.setTaxAmount(income * 0.2); // Условная ставка 20%
+        report.setReportDate(LocalDateTime.now());
+        report.setStatus("GENERATED");
+        return taxReportRepository.save(report);
+    }
 }

@@ -93,16 +93,19 @@ public class OpportunityService {
         
         // Динамический расчет вероятности в зависимости от этапа (имитация)
         switch (newStage) {
-            case "QUALIFICATION": opp.setProbability(20); break;
-            case "PROPOSAL": opp.setProbability(50); break;
-            case "NEGOTIATION": opp.setProbability(75); break;
+            case "QUALIFICATION": opp.setProbability(20.0); break;
+            case "PROPOSAL": opp.setProbability(50.0); break;
+            case "NEGOTIATION": opp.setProbability(75.0); break;
             case "CLOSED_WON": 
-                opp.setProbability(100); 
+                opp.setProbability(100.0); 
                 opp.setClosedDate(LocalDateTime.now());
                 break;
             case "CLOSED_LOST": 
-                opp.setProbability(0); 
+                opp.setProbability(0.0); 
                 opp.setClosedDate(LocalDateTime.now());
+                break;
+            default:
+                opp.setProbability(10.0);
                 break;
         }
         
@@ -147,5 +150,33 @@ public class OpportunityService {
                 .orElseThrow(() -> new RuntimeException("Сделка не найдена"));
         opp.setOwnerName(managerName);
         opportunityRepository.save(opp);
+    }
+
+    /**
+     * <p>Переводит сделку на новый этап.</p>
+     * @param opportunityId ID
+     * @param newStage Этап
+     */
+    @Transactional
+    public void moveToStage(Long opportunityId, String newStage) {
+        advanceStage(opportunityId, newStage);
+    }
+
+    /**
+     * <p>Закрывает сделку со статусом "Выиграна".</p>
+     * @param opportunityId ID
+     */
+    @Transactional
+    public void closeAsWon(Long opportunityId) {
+        advanceStage(opportunityId, "CLOSED_WON");
+    }
+
+    /**
+     * <p>Рассчитывает взвешенный доход по всем открытым сделкам.</p>
+     * @return double
+     */
+    @Transactional(readOnly = true)
+    public double calculatePipelineWeightedRevenue() {
+        return calculatePipelineForecast();
     }
 }

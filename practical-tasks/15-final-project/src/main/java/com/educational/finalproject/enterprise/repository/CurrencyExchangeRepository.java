@@ -53,4 +53,14 @@ public interface CurrencyExchangeRepository extends JpaRepository<CurrencyExchan
      * @return Список
      */
     List<CurrencyExchange> findByIsOfficial(boolean isOfficial);
+
+    /**
+     * Поиск курса по паре валют (алиас).
+     * @param from Исходная
+     * @param to Целевая
+     * @return Optional
+     */
+    default Optional<CurrencyExchange> findByFromCurrencyAndToCurrency(String from, String to) {
+        return findByBaseCurrencyAndTargetCurrencyOrderByEffectiveDateDesc(from, to);
+    }
 }

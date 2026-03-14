@@ -135,4 +135,30 @@ public class InvoiceService {
                 .mapToDouble(Invoice::getGrossAmount)
                 .sum();
     }
+
+    /**
+     * <p>Удаляет инвойс из системы.</p>
+     * @param invoiceId ID счета
+     */
+    @Transactional
+    public void deleteInvoice(Long invoiceId) {
+        invoiceRepository.deleteById(invoiceId);
+    }
+
+    /**
+     * <p>Создает инвойс на основе имени клиента и суммы (перегруженный метод для тестов).</p>
+     * @param customer Имя клиента
+     * @param amount Сумма
+     * @return Invoice Созданный объект (для тестов ожидается сущность)
+     */
+    @Transactional
+    public Invoice createInvoice(String customer, double amount) {
+        Invoice invoice = new Invoice();
+        invoice.setCustomerName(customer);
+        invoice.setGrossAmount(amount);
+        invoice.setInvoiceNumber("INV-T-" + System.currentTimeMillis());
+        invoice.setIssueDate(LocalDateTime.now());
+        invoice.setStatus("DRAFT");
+        return invoiceRepository.save(invoice);
+    }
 }

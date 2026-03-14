@@ -41,7 +41,7 @@ public class Opportunity {
     /**
      * Вероятность успешного закрытия сделки (в процентах, от 0 до 100).
      */
-    private int probability;
+    private double probability;
 
     /**
      * Текущий этап воронки продаж: 
@@ -113,7 +113,7 @@ public class Opportunity {
     public Opportunity() {
         this.createdAt = LocalDateTime.now();
         this.stage = "PROSPECTING";
-        this.probability = 10; // Начальная вероятность
+        this.probability = 10.0; // Начальная вероятность
     }
 
     /**
@@ -138,8 +138,8 @@ public class Opportunity {
     public double getExpectedRevenue() { return expectedRevenue; }
     public void setExpectedRevenue(double expectedRevenue) { this.expectedRevenue = expectedRevenue; }
 
-    public int getProbability() { return probability; }
-    public void setProbability(int probability) { this.probability = probability; }
+    public double getProbability() { return probability; }
+    public void setProbability(double probability) { this.probability = probability; }
 
     public String getStage() { return stage; }
     public void setStage(String stage) { this.stage = stage; }

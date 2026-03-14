@@ -132,4 +132,13 @@ public class LeadService {
                 .map(leadMapper::toDTO)
                 .collect(Collectors.toList());
     }
+
+    /**
+     * <p>Квалифицирует лида, переводя его в статус QUALIFIED.</p>
+     * @param leadId ID лида
+     */
+    @Transactional
+    public void qualifyLead(Long leadId) {
+        updateLeadStatus(leadId, "QUALIFIED");
+    }
 }
