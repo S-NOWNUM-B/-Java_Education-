@@ -13,6 +13,8 @@
 ## Содержание
 
 - [О проекте](#о-проекте)
+- [Теоретический материал](#теоретический-материал)
+- [Практические задания](#практические-задания)
 - [Быстрый старт](#быстрый-старт)
 - [Команды](#команды)
 - [Системные требования](#системные-требования)
@@ -27,6 +29,25 @@
 
 ---
 
+## Теоретический материал
+
+В папке `teoretical-material` собраны основные темы для изучения:
+
+1. [Введение в Java](teoretical-material/01-vvedenie-v-java.md)
+2. [Основы синтаксиса](teoretical-material/02-osnovy-sintaksisa.md)
+3. [Концепции ООП](teoretical-material/03-oop-koncepcii.md)
+4. [Коллекции и структуры данных](teoretical-material/04-kollekcii-i-struktury-dannyh.md)
+
+---
+
+## Практические задания
+
+Все практические задачи находятся в папке `practical-tasks`.
+
+- [01-hello-world](practical-tasks/01-hello-world) — Первая программа на Java.
+
+---
+
 ## Быстрый старт
 
 ### Запуск упражнений
@@ -34,10 +55,10 @@
 ```bash
 # 1. Клонирование репозитория
 git clone <repository-url>
-cd Java_Education
+cd -Java_Education-
 
 # 2. Переход в упражнение
-cd Practical_Tasks/00_nameProject
+cd practical-tasks/01-hello-world
 
 # 3. Сборка и запуск
 gradle build && gradle run
