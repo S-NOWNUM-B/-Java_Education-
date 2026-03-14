@@ -11,6 +11,9 @@ out/
 *.iml
 *.ipr
 
+### VSCode ###
+.vscode/
+
 ### Eclipse ###
 .apt_generated
 .classpath

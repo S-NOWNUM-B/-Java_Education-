@@ -20,6 +20,7 @@ public class PatternsMain {
         // 2. Strategy
         // В реальном приложении мы бы подставляли стратегии динамически
         ShoppingCart cart = new ShoppingCart();
+        System.out.println("Корзина создана: " + cart.getClass().getSimpleName());
         
         System.out.println("--- Оформляем заказ 1 ---");
         // cart.setPaymentStrategy(new CreditCardStrategy()); // Ошибка видимости? Исправим в тестах или через Factory

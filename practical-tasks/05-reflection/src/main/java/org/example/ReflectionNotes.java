@@ -19,6 +19,7 @@ import java.lang.reflect.*;
 }
 
 class SecretCrate {
+    @SuppressWarnings("unused")
     private String secretContent = "Золотые горы";
 
     @MyTest(info = "Очень важный метод")
@@ -26,6 +27,7 @@ class SecretCrate {
         System.out.println("Сундук открыт!");
     }
 
+    @SuppressWarnings("unused")
     private void stayHidden() {
         System.out.println("Меня никто не должен был вызвать...");
     }
