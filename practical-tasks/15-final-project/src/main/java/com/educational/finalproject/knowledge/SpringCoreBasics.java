@@ -2,7 +2,7 @@ package com.educational.finalproject.knowledge;
 
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 /**
  * # Основы Spring

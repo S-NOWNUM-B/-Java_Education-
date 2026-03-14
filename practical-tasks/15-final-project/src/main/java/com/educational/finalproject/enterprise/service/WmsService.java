@@ -13,6 +13,7 @@ import java.util.List;
  * Сервис управления складом (Warehouse Management System Service).
  */
 @Service
+@SuppressWarnings("null")
 public class WmsService {
 
     private final WarehouseRepository warehouseRepository;

@@ -12,13 +12,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * Сервис управления персоналом (HR Service).
  * Содержит бизнес-логику для работы с сотрудниками и департаментами.
  */
 @Service
+@SuppressWarnings("null")
 public class HrService {
 
     private final EmployeeRepository employeeRepository;

@@ -1,6 +1,6 @@
 package com.educational.finalproject.enterprise.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Сущность OrderItem представляет позицию в заказе.

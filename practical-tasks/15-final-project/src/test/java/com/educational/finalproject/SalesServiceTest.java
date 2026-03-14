@@ -23,6 +23,7 @@ import static org.mockito.Mockito.*;
 /**
  * Тесты для SalesService.
  */
+@SuppressWarnings("null")
 class SalesServiceTest {
 
     @Mock

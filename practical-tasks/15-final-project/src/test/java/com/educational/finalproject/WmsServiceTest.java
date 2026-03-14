@@ -22,6 +22,7 @@ import static org.mockito.Mockito.*;
 /**
  * Тесты для WmsService.
  */
+@SuppressWarnings("null")
 class WmsServiceTest {
 
     @Mock

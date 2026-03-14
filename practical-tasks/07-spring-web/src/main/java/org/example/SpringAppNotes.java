@@ -25,7 +25,7 @@ class HelloController {
 
     // Эту заметку можно увидеть, открыв http://localhost:8080/api/hello
     @GetMapping("/hello")
-    public String sayHello(@RequestParam(defaultValue = "Student") String name) {
+    public String sayHello(@RequestParam(name = "name", defaultValue = "Student") String name) {
         return "Привет, " + name + "! Это твое первое Spring Boot приложение.";
     }
 
@@ -41,6 +41,9 @@ class AppStatus {
     private String status;
     private int code;
 
+    public AppStatus() {
+    }
+
     public AppStatus(String status, int code) {
         this.status = status;
         this.code = code;
@@ -49,4 +52,7 @@ class AppStatus {
     // Геттеры обязательны для работы JSON-сериализатора!
     public String getStatus() { return status; }
     public int getCode() { return code; }
+
+    public void setStatus(String status) { this.status = status; }
+    public void setCode(int code) { this.code = code; }
 }

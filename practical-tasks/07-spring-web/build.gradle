@@ -10,8 +10,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web:3.2.2'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.5.11'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.5.11'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 test {

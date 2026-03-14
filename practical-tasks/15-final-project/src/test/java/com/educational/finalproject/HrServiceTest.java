@@ -27,6 +27,7 @@ import static org.mockito.Mockito.*;
  * Тесты для HrService.
  * Написаны максимально подробно для увеличения объема кода.
  */
+@SuppressWarnings("null")
 class HrServiceTest {
 
     @Mock

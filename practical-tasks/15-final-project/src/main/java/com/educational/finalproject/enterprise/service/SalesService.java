@@ -15,6 +15,7 @@ import java.util.List;
  * Сервис управления продажами (Sales Service).
  */
 @Service
+@SuppressWarnings("null")
 public class SalesService {
 
     private final OrderRepository orderRepository;

@@ -1,7 +1,5 @@
 package com.educational.finalproject.knowledge;
 
-import java.util.Date;
-
 /**
  * # JWT (JSON Web Token)
  *
